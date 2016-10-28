@@ -56,15 +56,14 @@ def run_prediction(data, file_names):
 
             feed_dict = {
                 images_pl: [images[example]],
-                labels_pl: [labels[example]]
+
             }
 
-            logits_op, actual = sess.run([logits,labels_pl], feed_dict=feed_dict)
-
+            logits_op = sess.run(logits, feed_dict=feed_dict)
             predicted = logits_op[0].argmax()
 
-            print(logits_op[0], predicted, actual)
-            ret.append([predicted, actual, file_names[example]])
+            print(logits_op[0], predicted, labels[example])
+            ret.append([predicted,labels[example], file_names[example]])
 
         return ret
 
