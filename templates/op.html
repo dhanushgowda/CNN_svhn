@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>op</title>
+</head>
+<body>
+
+{% for en in data %}
+    <img src="../{{ en[2] }}" alt="blah" height="100" width="100"/>
+    <div>Actual - {{ en[1] }}</div>
+    <div>Predicted - {{ en[0] }}</div>
+    <br>
+    <br>
+{% endfor %}
+
+</body>
+</html>
