@@ -43,13 +43,13 @@ def run_evaluation(data):
 
         saver = tf.train.Saver(tf.all_variables())
 
-        init = tf.initialize_all_variables()
+        # init = tf.initialize_all_variables()
         sess = tf.Session()
 
         saver.restore(sess, "checkpoints/-4500")
         print("Model restored.")
 
-        sess.run(init)
+        # sess.run(init)
         do_eval(sess, eval_correct, images_pl, labels_pl, data.test)
 
 

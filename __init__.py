@@ -19,8 +19,7 @@ def nocache(f):
 def run_eval():
     x, y = get_predictions()
     pred = [i[0] for i in x]
-    actual = [i[1][0] for i in x]
-    # pred_cat = [b.argmax() for b in pred]
+    actual = [i[1] for i in x]
     z = []
     for i in range(0, len(y)):
         z.append([pred[i], actual[i], y[i]])

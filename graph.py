@@ -1,6 +1,7 @@
 import tensorflow as tf
 
-BATCH_SIZE = 128
+#IMPORTANT: BATCH_SIZE should be set to 128 for training, 1 for prediction
+BATCH_SIZE = 1
 HIDDEN_SIZE = 2048
 HIDDEN_SIZE_2 = HIDDEN_SIZE // 2
 
