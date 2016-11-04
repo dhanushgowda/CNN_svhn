@@ -23,8 +23,13 @@ def run_eval():
     z = []
     for i in range(0, len(y)):
         z.append([pred[i], actual[i], y[i]])
-    print(z)
-    return render_template("op.html", data=z)
+    # print(z)
+    # a = z[0:4]
+    # b = z[5:9]
+    # c = z[10:14]
+    # d = z[15:19]
+    a,b,c,d = (z[0:5], z[5:10], z[10:15], z[15:20])
+    return render_template("op.html", data=z, new_data=zip(a, b, c, d))
 
 
 if __name__ == "__main__":

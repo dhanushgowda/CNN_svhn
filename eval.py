@@ -63,8 +63,11 @@ def run_prediction(data, file_names):
 
             predicted = logits_op[0].argmax()
 
-            if int(predicted) == 0:
-                predicted = 10
+            # if int(predicted) == 0:
+            #     predicted = 10
+
+            if int(labels[example]) == 10:
+                labels[example] = 0
 
             print(logits_op[0], predicted, labels[example])
             ret.append([predicted, labels[example], file_names[example]])

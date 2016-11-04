@@ -6,13 +6,50 @@
 </head>
 <body>
 
-{% for en in data %}
-    <img src="../{{ en[2] }}" alt="blah" height="100" width="100"/>
-    <div>Actual - {{ en[1] }}</div>
-    <div>Predicted - {{ en[0] }}</div>
-    <br>
-    <br>
-{% endfor %}
+<!--{% for en in data %}-->
+<!--<img src="../{{ en[2] }}" alt="blah" height="100" width="100"/>-->
+<!--<div>Actual - {{ en[1] }}</div>-->
+<!--<div>Predicted - {{ en[0] }}</div>-->
+<!--<br>-->
+<!--<br>-->
+<!--{% endfor %}-->
+
+<table style="width:100%">
+    <caption>Sample predictions on Test data</caption>
+    {% for sample1, sample2, sample3, sample4 in new_data %}
+    <tr>
+        <th>
+            <img src="../{{ sample1[2] }}" alt="blah" height="100" width="100"/>
+            <div>Actual - {{ sample1[1] }}</div>
+            <div>Predicted - {{ sample1[0] }}</div>
+            <br>
+            <br>
+        </th>
+        <th>
+            <img src="../{{ sample2[2] }}" alt="blah" height="100" width="100"/>
+            <div>Actual - {{ sample2[1] }}</div>
+            <div>Predicted - {{ sample2[0] }}</div>
+            <br>
+            <br>
+        </th>
+        <th>
+            <img src="../{{ sample3[2] }}" alt="blah" height="100" width="100"/>
+            <div>Actual - {{ sample3[1] }}</div>
+            <div>Predicted - {{ sample3[0] }}</div>
+            <br>
+            <br>
+        </th>
+        <th>
+            <img src="../{{ sample4[2] }}" alt="blah" height="100" width="100"/>
+            <div>Actual - {{ sample4[1] }}</div>
+            <div>Predicted - {{ sample4[0] }}</div>
+            <br>
+            <br>
+        </th>
+    </tr>
+    {% endfor %}
+
+</table>
 
 </body>
 </html>
