@@ -101,6 +101,8 @@ start = time.time()
 if tf.gfile.Exists(SUMMARY_DIR):
     tf.gfile.DeleteRecursively(SUMMARY_DIR)
 # input.maybe_download_and_extract()
+
+# 58k - Train, 15k - Validation, 26k - Test
 data = input.get_data(num_training=DS_SIZE, num_validation=VALID_SIZE)
 
 run_training(data)
